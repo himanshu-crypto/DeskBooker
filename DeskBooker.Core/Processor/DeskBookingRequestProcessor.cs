@@ -5,7 +5,7 @@ namespace DeskBooker.Core.Processor
 {
     public class DeskBookingRequestProcessor
     {
-        public DeskBookingRequestProcessor()
+        public DeskBookingRequestProcessor(DataInterface.IDeskBookingRepository @object)
         {
         }
 
@@ -13,6 +13,7 @@ namespace DeskBooker.Core.Processor
         {
             if (request == null)
                 throw new ArgumentNullException(nameof(request));
+
             return new DeskBookingResult
             {
                 FirstName = request.FirstName,
